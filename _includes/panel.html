@@ -1,0 +1,20 @@
+{% assign status = include.post.tags | first %}
+
+<div class="panel {% case status %}
+  {% when 'OK' %}
+     panel-success
+  {% when 'Down' %}
+     panel-danger
+  {% else %}
+     panel-primary
+{% endcase %}">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      {{ include.title | capitalize }}
+      <span class="pull-right">{{ include.post.date }}</span>
+    </h3>
+  </div>
+  <div class="panel-body">
+    {{ include.post.content }}
+  </div>
+</div>

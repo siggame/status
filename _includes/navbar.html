@@ -1,0 +1,38 @@
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">SIG-Game Status</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        {% assign categories = site.categories | sort  %}
+        {% for category in categories %}
+
+          {% assign cat = category[0] %}
+          {% assign latest_post = category[1] | last %}
+          <li class="{% if page.navbar == cat %}active{% endif%}">
+            <a href="/{{ cat }}/">
+              {{ cat | capitalize }}
+              <i class="fa {% assign status = latest_post.tags | first %}
+              {% case status %}
+              {% when 'OK' %}
+                fa-check-circle green
+              {% when 'Down' %}
+                fa-times-circle red
+              {% else %}
+                fa-exclamation-circle
+              {% endcase %}"></i>
+            </a>
+          </li>
+
+        {% endfor %}
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
