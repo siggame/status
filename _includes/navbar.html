@@ -15,7 +15,7 @@
         {% for category in categories %}
 
           {% assign cat = category[0] %}
-          {% assign latest_post = category[1] | last %}
+          {% assign latest_post = category[1] | sort: 'date' | last %}
           <li class="{% if page.navbar == cat %}active{% endif%}">
             <a href="/{{ cat }}/">
               {{ cat | capitalize }}
@@ -25,6 +25,8 @@
                 fa-check-circle green
               {% when 'Down' %}
                 fa-times-circle red
+              {% when 'Warning' %}
+                fa-exclamation-triangle orange
               {% else %}
                 fa-exclamation-circle
               {% endcase %}"></i>
