@@ -15,7 +15,7 @@
         {% for category in categories %}
 
           {% assign cat = category[0] %}
-          {% assign latest_post = category[1] | last %}
+          {% assign latest_post = category[1] | sort: 'date' | last %}
           <li class="{% if page.navbar == cat %}active{% endif%}">
             <a href="/{{ cat }}/">
               {{ cat | capitalize }}
