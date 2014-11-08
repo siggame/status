@@ -1,0 +1,14 @@
+---
+layout: embeded
+---
+
+<h2>SIG-Game Status</h2>
+
+{% assign categories = site.categories | sort %}
+{% for category in categories %}
+
+  {% assign cat = category[0] %}
+  {% assign latest_post = category[1] | first %}
+  {% include panel.html title=cat post=latest_post  %}
+
+{% endfor %}
