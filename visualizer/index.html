@@ -1,0 +1,17 @@
+---
+layout: base
+navbar: arena
+---
+
+<div class="container">
+
+  <h1>Visualizer Status</h1>
+
+  {% for post in site.categories.visualizer %}
+
+    {% assign title = post.title %}
+    {% assign post = post %}
+    {% include panel.html title=title post=post  %}
+
+  {% endfor %}
+</div>
