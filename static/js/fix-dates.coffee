@@ -4,5 +4,6 @@
 ---
 
 $ () ->
-    _($('.post-date')).each (date) ->
-        date.textContent = new Date(date.textContent).toString()
+    _($('.post-date')).each (element) ->
+        m = moment(element.textContent, 'ddd, DD MMM YYYY HH:mm:ss ZZ')
+        element.textContent = m.calendar()
