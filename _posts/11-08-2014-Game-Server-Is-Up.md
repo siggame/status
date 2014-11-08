@@ -11,8 +11,7 @@ You can connect to it at ``r99acm.device.mst.edu``
 
 As usual, run your AI with the following:
 
-* ``./run.sh r99acm.device.mst.edu`` will create a new game for you.
-* ``./run.sh r99acm.device.mst.edu <num>`` will connect you to game
+* ``./run r99acm.device.mst.edu`` will create a new game for you.
+* ``./run r99acm.device.mst.edu <num>`` will connect you to game
   ``<num>``. If it exists, your game will start. If it doesn't exist,
   then game ``<num>`` will be created for you.
-
