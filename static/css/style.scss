@@ -16,6 +16,16 @@
     color: orange;
 }
 
+.panel-title {
+    h3 {
+        color: white;
+        margin: 0;
+    }
+    small {
+        color: white;
+    }
+}
+
 .container {
     width: auto;
     max-width: 768px;
