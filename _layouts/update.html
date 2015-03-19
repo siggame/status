@@ -2,11 +2,31 @@
 layout: base
 ---
 
+{% assign status = page.tags|first %}
+
 <div class="container">
-
-  <h1>{{ post.title }}</h1>
-
-  {{ post.content }}
-
-
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1>
+            <i class="fa {% case status %}
+                      {% when 'OK' %}
+                      fa-check-circle green
+                      {% when 'Down' %}
+                      fa-times-circle red
+                      {% when 'Warning' %}
+                      fa-exclamation-triangle orange
+                      {% else %}
+                      fa-exclamation-circle
+                      {% endcase %}"></i>
+            {{ page.title }} <small>{{ page.date | date_to_string }}</small>
+          </h1>
+        </div>
+        <div class="panel-body">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
