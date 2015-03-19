@@ -20,7 +20,7 @@ layout: base
                       {% else %}
                       fa-exclamation-circle
                       {% endcase %}"></i>
-            {{ page.title }} <small>{{ page.date | date_to_string }}</small>
+            {{ page.title }} <small>{{ page.date | date_to_rfc822 }}</small>
           </h1>
         </div>
         <div class="panel-body">
