@@ -16,13 +16,19 @@
     color: orange;
 }
 
-.panel-title {
-    h3 {
-        color: white;
-        margin: 0;
+.panel-heading {
+    .panel-title {
+        h3 {
+            color: white;
+            margin: 0;
+        }
+        small {
+            color: white;
+        }
     }
-    small {
+    a {
         color: white;
+        margin-left: 3px;
     }
 }
 

@@ -11,10 +11,15 @@
      panel-primary
 {% endcase %}">
   <div class="panel-heading">
-    <h3 class="panel-title">
-      {{ include.title | capitalize }}
-      <span class="pull-right post-date">{{ include.post.date | date_to_rfc822 }}</span>
+    <h3 class="panel-title" style="display:inline">
+        {{ include.title | capitalize }}
     </h3>
+
+    <a href="{{ include.post.url }}">
+      <i class="fa fa-external-link"></i>
+    </a>
+
+    <span class="pull-right post-date">{{ include.post.date | date_to_rfc822 }}</span>
   </div>
   <div class="panel-body">
     {{ include.post.content }}
