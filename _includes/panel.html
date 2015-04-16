@@ -14,14 +14,18 @@
     <h3 class="panel-title" style="display:inline">
         {{ include.title | capitalize }}
     </h3>
-
-    <a href="{{ include.post.url }}">
+    <a class="pull-right" href="{{ include.post.url }}">
+      {% if include.title != include.post.title %}
+        <b>{{ include.post.title }}</b>
+      {% endif %}
       <i class="fa fa-external-link"></i>
     </a>
-
-    <span class="pull-right post-date">{{ include.post.date | date_to_rfc822 }}</span>
   </div>
   <div class="panel-body">
     {{ include.post.content }}
+  </div>
+  <div class="panel-footer">
+    <span class="post-time-since">{{ include.post.date | date_to_rfc822 }}</span>
+    <span class="pull-right">{{ include.post.date | date_to_rfc822 }}</span>
   </div>
 </div>

@@ -7,3 +7,7 @@ $ () ->
     _($('.post-date')).each (element) ->
         m = moment(element.textContent, 'ddd, DD MMM YYYY HH:mm:ss ZZ')
         element.textContent = m.calendar()
+
+    _($('.post-time-since')).each (element) ->
+        m = moment(element.textContent, 'ddd, DD MMM YYYY HH:mm:ss ZZ')
+        element.textContent = m.from(moment())
