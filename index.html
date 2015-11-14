@@ -11,5 +11,7 @@ layout: base
     {% assign latest_post = category[1] | first %}
     {% include panel.html title=cat post=latest_post  %}
 
+  {% else %}
+  <h1 class="text-center text-muted">No statuses to report</h1>
   {% endfor %}
 </div>
