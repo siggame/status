@@ -1,0 +1,13 @@
+# Site settings
+title: SIG-Game Status
+description: "Status of services for S&T ACM SIG-Game"
+author: ACM SIG-Game
+url: "http://status.megaminerai.com"
+timezone: "America/Chicago"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Static files
+static_url: /static/
